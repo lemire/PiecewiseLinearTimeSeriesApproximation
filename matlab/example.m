@@ -1,4 +1,3 @@
-%compare this results to my.cpp
 
 degree = 2;
 k = 7; %model complexity

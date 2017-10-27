@@ -16,56 +16,9 @@
  * where start and end are the point index and degree is the degree (0=flat)
  * of the segment.
  *
- * What follows is my old documentation:
- *
- * The program outputs the 3 matrices which are the solution
- * of the dynamic programming problem (RSS, SegmentationPoints, Degrees).
- * Making sense of these 3 matrices is not meant to be trivial, but
- * if you understand dynamic programming, you have that the first matrix
- * is the optimal "cost" matrix, the second one tells you where to move
- * to (starting from the end column) and the degree matrix tells you
- * how many rows to move up. The previous sentence is not meant to be
- * easily parseable. I'm too busy to document this seriously, sorry.
- *
- * The output should look like this:
- * [
- * 0,0,0,6.75,10.8
- * 0,0,0,4.5,6
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,0,0
- * ]
- * [
- * 0,0,0,0,0
- * 0,0,0,2,2
- * 0,0,0,2,2
- * 0,0,0,3,3
- * 0,0,0,3,3
- * 0,0,0,3,3
- * 0,0,0,3,3
- * ]
- * [
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,1,1
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,0,0
- * 0,0,0,0,0
- * ]
- *
- * I hope this program is useful to you! But if your computer goes out in
- * flame or your wife leaves you, I don't want to hear about it: this
- * software comes as is.
- *
- * You can assume GPL version 2.0 licensing, though other more liberal
- * licenses are possible, just ask. I will not charge money for this code.
  *
  * January 2006
  * Daniel Lemire
- * http://www.daniel-lemire.com/
  */
 
 #include <vector>
@@ -77,6 +30,9 @@
 #include <fstream>
 #include <sstream>
 #include <cassert>
+#include <algorithm>
+#include <cstring>
+
 using namespace std;
 
 /**
